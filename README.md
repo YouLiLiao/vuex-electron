@@ -25,18 +25,18 @@ The easiest way to share your Vuex Store between all processes (including main).
 
 ### Installation
 
-Installation of the Vuex Electron easy as 1-2-3.
+Installation of the Vuex Electron easy as 1-2-3-4.
 
 1. Install package with using of [yarn](https://github.com/yarnpkg/yarn) or [npm](https://github.com/npm/cli):
 
     ```
-    yarn install vuex-electron
+    yarn install superleo-vuex-electron
     ```
 
     or
 
     ```
-    npm install vuex-electron
+    npm install superleo-vuex-electron
     ```
 
 2. Include plugins in your Vuex store::
@@ -45,7 +45,7 @@ Installation of the Vuex Electron easy as 1-2-3.
     import Vue from "vue"
     import Vuex from "vuex"
 
-    import { createPersistedState, createSharedMutations } from "vuex-electron"
+    import { createPersistedState, createSharedMutations } from "superleo-vuex-electron"
 
     Vue.use(Vuex)
 
@@ -64,8 +64,14 @@ Installation of the Vuex Electron easy as 1-2-3.
     ```javascript
     import './path/to/your/store'
     ```
+4. It is important that you must use the `initRenderer()` method into your main process:
 
-4. Well done you did it! The last step is to add the star to this repo :smile:
+    ```javascript
+    import { initRenderer } from 'superleo-vuex-electron'
+    initRenderer()
+    ```
+
+5. Well done you did it! The last step is to add the star to this repo :smile:
 
 **Usage example: [Vuex Electron Example](https://github.com/vue-electron/vuex-electron-example)**
 
